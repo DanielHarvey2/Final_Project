@@ -1,50 +1,30 @@
 "use strict";
-let score = 0;
-console.log("You have " + score + " points");
+let points = 0;
+console.log("You have " + points + " points");
 let Attempts = 4;
 console.log("You have " + Attempts + " left");
 let user = prompt("what is your name?");
 alert("Hello " + user);
 
-const img = document.querySelector("#rock");
-const container2 = document.querySelector("#paper");
-const container3 = document.querySelector("#scissors");
-const result = document.querySelector(".button");
+//const rock = document.querySelector(".container1");
+//const paper = document.querySelector(".container2");
+//const scissors = document.querySelector(".container3");
+//const score = document.querySelector(".score");
 
-choiceBtns.forEach((button) =>
-  button.addEventListener("click", () => {
-    player = button.textContent;
-    computerTurn();
-    playerText.textContent = `Player: ${player}`;
-    computerText.textContent = `Computer: ${computer}`;
-    resultText.textContent = checkWinner();
-  })
-);
-function computerTurn() {
-  const randNum = Math.floor(Math.random() * 3) + 1;
+let rps = ["rock", "paper", "scissors"];
 
-  switch (randNum) {
-    case 1:
-      computer = "ROCK";
-      break;
-    case 2:
-      computer = "PAPER";
-      break;
-    case 3:
-      computer = "SCISSORS";
-      break;
+let rpsResult = function () {
+  let rpsPicker = Math.floor(Math.random() * 3);
+  if (rpsPicker === 0) {
+    console.log("Rock");
+  } else if (rpsPicker === 1) {
+    console.log("Paper");
+  } else {
+    console.log("Scissors");
   }
-}
-function checkWinner() {
-  if (player == computer) {
-    return "Draw!";
-  } else if (computer == "ROCK") {
-    return player == "PAPER" ? "You Win!" : "You Lose!";
-  } else if (computer == "PAPER") {
-    return player == "SCISSORS" ? "You Win!" : "You Lose!";
-  } else if (computer == "SCISSORS") {
-    return player == "ROCK" ? "You Win!" : "You Lose!";
-  }
-}
+};
 
-document.getElementById = rps_intro_user();
+const choice = document.getElementsByClassName("choice");
+choice.array.forEach((element) => {
+  addEventListener("click")[rpsResult];
+});
